@@ -11,10 +11,10 @@
 
 <script>
   /*1) Given an array of numbers, return a new array that has only the numbers that are 5 or greater.*/
-//   let arry = [2,4,6,8,9,10,15,16];
 
+  // way 1
   function fiveAndGreaterOnly(arr) {
-    // console.log(arr);
+    console.log(arr);
     let result = [] ;
     for(let i = 0; i<arr.length; i++) {
       if(arr[i] > 5) {
@@ -23,10 +23,18 @@
     }
     return result;
   }
+
+  //way 2
+  function fiveAndGreaterOnly(arr) { 
+    let result = arr.filter((data) => data>5)
+  return result;
+}
+
   console.log("Numbers greater then 5 are : ",fiveAndGreaterOnly([3, 6, 8, 2]));
   
   /*2) Given an array of numbers, return a new array that only includes the even numbers.*/
-function evensOnly(arr) {
+// way 1
+  function evensOnly(arr) {
     let result = [] ;
   for(let i=0;i<arr.length ; i++){
     if(arr[i]%2==0){
@@ -35,9 +43,16 @@ function evensOnly(arr) {
   }
   return result;
 }
+
+// way 2
+function evensOnly(arr) {
+  let result = arr.filter((data) => data%2==0)
+  return result;
+}
 console.log("Even numbers are : ",evensOnly([3, 6, 8, 2])); /// [6, 8, 2]
 
 /*3) Given an array of strings, return a new array that only includes those that are 5 characters or fewer in length.*/
+// way 1
 function fiveCharactersOrFewerOnly(arr) {
     let result = [] ;
     for(let i=0;i<arr.length;i++){
@@ -47,10 +62,18 @@ function fiveCharactersOrFewerOnly(arr) {
    }
    return result;
 }
+
+// way 2
+function fiveCharactersOrFewerOnly(arr) {
+  let result = arr.filter((data) => data.length<=5)
+  return result;
+}
+
 console.log("Five char words are : ",fiveCharactersOrFewerOnly(["dog", "wolf", "by", "family", "eaten", "camping"])
 ); // ["by", "dog", "wolf", "eaten"]
 
 /*4) Given an array of people objects, return a new array that has filtered out all those who don't belong to the club.*/
+// way 1
 function peopleWhoBelongToTheIlluminati(arr) {
     let result = [];
   for(let i=0;i<arr.length;i++){
@@ -60,6 +83,12 @@ function peopleWhoBelongToTheIlluminati(arr) {
 }
   return result;
 
+}
+
+// way 2
+function peopleWhoBelongToTheIlluminati(arr) {
+  let result = arr.filter((data) => data.member);
+  return result;
 }
 // test
 console.log( "People doesn't belong to club : ",
@@ -77,6 +106,7 @@ console.log( "People doesn't belong to club : ",
 //  { name: 'Bob Ziroll', member: true } ]
 
 /*5) Make a filtered list of all the people who are old enough to see The Matrix (older than 18).*/
+// way 1
 function ofAge(arr) {
     let result = []; 
   for(let i=0;i<arr.length;i++){
@@ -85,6 +115,13 @@ function ofAge(arr) {
     }
   }
   return result;
+}
+
+// way 2
+function ofAge(arr) {
+   let result = arr.filter((data) => data.age>18);
+   return result;
+     
 }
 // test
 console.log("people who are old : ",
